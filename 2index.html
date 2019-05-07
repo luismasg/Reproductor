@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Musihall</title>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">		
+	</style>	
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>PlayList <strong>Rockall</strong>		
+				</h2>
+				<ul>
+					<li>
+						<div class="d-flex justify-content-beetween contenedor-informacion">						
+							<div>
+								<h4>T.N.T</h4>
+							</div>
+							<div>
+								<h5>ACDC</h5>
+							</div>					
+							<div>
+								<img src="img/tnt.jpg" class="img-album">
+							</div>
+							<div>
+								<audio controls>
+									<source src="music/tnt.mp3" type="audio/mp3">
+								</audio>								
+							</div>
+						</div>	
+					</li>
+
+					<li>
+						<div class="d-flex justify-content-beetween contenedor-informacion">							
+							<div>					
+								<h4>black in black</h4>
+							</div>
+							<div>
+								<h5>ACDC</h5>
+							</div>								
+							<div>
+								<img src="img/blackinblack.jpg" class="img-album" >
+							</div>
+							<div>
+								<audio controls>
+									<source src="music/back-acdc.mp3" type="audio/mp3">
+								</audio>								
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="d-flex justify-content-beetween contenedor-informacion">
+							<div>
+								<h4>Dream On</h4>
+							</div>
+							<div>
+								<h5>Aerosmith</h5>
+							</div>								
+							<div>
+								<img src="img/dreamon.jpg" class="img-album">
+							</div>
+							<div>
+								<audio controls>
+									<source src="music/dream.mp3" type="audio/mp3">
+								</audio>
+								
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<div class="d-flex justify-content-beetween contenedor-informacion">
+							<div>
+								<h4>Numb</h4>
+							</div>
+							<div>
+								<h5>Linkin Park</h5>
+							</div>				
+							<div>
+								<img src="img/numb.jpg" class="img-album">								
+							</div>
+							<div>
+								<audio controls>
+									<source src="music/numb.mp3" type="audio/mp3">
+								</audio>								
+							</div>
+						</div>	
+					</li>
+					<li>
+						<div class="d-flex justify-content-beetween contenedor-informacion">
+							<div>
+								<h4>Lithium</h4>
+							</div>
+							<div>
+								<h5>Nirvana</h5>
+							</div>															
+							<div>
+								<img src="img/lithium.jpg" class="img-album">
+							</div>
+							<div>
+								<audio controls>
+									<source src="music/lithium.mp3" type="audio/mp3">
+								</audio>
+							</div>			
+						</div>
+					</li>
+					<li>
+						<div class="d-flex justify-content-beetween contenedor-informacion">
+							<div>
+								<h4>Feel good Inc</h4>
+							</div>
+							<div>
+								<h5>Gorillaz</h5>
+							</div>							
+							<div>
+								<img src="img/feel.jpg" class="img-album">
+							</div>
+							<div>
+								<audio controls>
+									<source src="music/feel.mp3" type="audio/mp3">
+								</audio>
+							</div>							
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-6 p-5">					
+				<h2 class="text-center">Me estas escuchando</h2>	
+				<h4 id="tituloCancion">Nombre de la cancion</h4>
+				<h5 id="tituloArtista">Nombre de el artista</h5>
+				<div class="p-3 text-center" id="contenedorImagen"></div>
+				<div class="process">
+					<div class="process-bar"></div>
+				</div>
+				<div class="btn-group">
+					<button class="btn btn-default"></button>
+					<button id= "pausa" class="btn btn-default"></button>
+					<button class="btn btn-default"></button>
+				</div>
+			</div>
+		</div>				
+	</div>
+	<script type="text/javascript" src="js/app.js">
+	</script>
+</body>
+</html>
