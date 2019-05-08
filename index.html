@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Musihall</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css" >
+	<style type="text/css">
+		.colunm{
+			border: 1px solid black;
+		} 
+
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="colunm col-sm-5">
+				<ol>
+					<li data-cancion ="feel">
+						<div>
+							<div class="d-flex justify-content-between contenedor-informacion">
+								<div>
+									<h4>Feel good Inc</h4>					
+									<h5>Gorillaz</h5>
+								</div>							
+								<div>
+									<img src="img/feel.jpg" class="img-album"/>
+								</div>							
+							</div>
+							<button class="btn btn-primary btn-reproducir">Play</button>
+						</div>
+					</li>
+					<li data-cancion ="tnt">
+						<div>
+							<div class="d-flex justify-content-between contenedor-informacion">
+								<div>
+									<h4>tnt</h4>					
+									<h5>ACDC</h5>
+								</div>							
+								<div>
+									<img src="img/tnt.jpg" class="img-album"/>
+								</div>							
+							</div>
+							<button class="btn btn-primary btn-reproducir">Play</button>
+						</div>
+					</li>
+					<li data-cancion ="dream">
+						<div>
+							<div class="d-flex justify-content-between contenedor-informacion">
+								<div>
+									<h4>Dream on</h4>					
+									<h5>Aerosmith</h5>
+								</div>							
+								<div>
+									<img src="img/dreamon.jpg" class="img-album"/>
+								</div>							
+							</div>
+							<button class="btn btn-primary btn-reproducir">Play</button>
+						</div>
+					</li>
+					<li data-cancion ="numb">
+						<div>
+							<div class="d-flex justify-content-between contenedor-informacion">
+								<div>
+									<h4>Numb</h4>					
+									<h5>Nirvana</h5>
+								</div>							
+								<div>
+									<img src="img/numb.jpg" class="img-album"/>
+								</div>							
+							</div>
+							<button class="btn btn-primary btn-reproducir">Play</button>
+						</div>
+					</li>
+					<li data-cancion ="lithium">
+						<div>
+							<div class="d-flex justify-content-between contenedor-informacion">
+								<div>
+									<h4>Lithium</h4>					
+									<h5>Nirvana</h5>
+								</div>							
+								<div>
+									<img src="img/lithium.jpg" class="img-album"/>
+								</div>							
+							</div>
+							<button class="btn btn-primary btn-reproducir">Play</button>
+						</div>
+					</li>
+					<li data-cancion ="back-acdc">
+						<div>
+							<div class="d-flex justify-content-between contenedor-informacion">
+								<div>
+									<h4>Black in Black</h4>					
+									<h5>ACDC</h5>
+								</div>							
+								<div>
+									<img src="img/blackinblack.jpg" class="img-album"/>
+								</div>							
+							</div>
+							<button class="btn btn-primary btn-reproducir">Play</button>
+						</div>
+					</li>
+					
+				</ol>
+			</div>
+			<div class="colunm col-sm-7 p-5">
+				<h2 class="text-center">Me estas escuchando</h2>	
+				<h4 id="tituloCancion">Nombre de la cancion</h4>
+				<h5 id="tituloArtista">Nombre de el artista</h5>
+				<div class="p-3 text-center" id="contenedorImagen"></div>
+				<div class="process">
+					<div class="process-bar"></div>
+				</div>
+				<div class="btn-group">
+					<button class="btn btn-default"></button>
+					<button id= "pausa" class="btn btn-default"></button>
+					<button class="btn btn-default"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="js/app.js">
+	</script>
+</body>
+</html>
