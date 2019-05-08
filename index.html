@@ -2,13 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+	  <!-- Required meta tags -->
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Musihall</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="style.css" >
 	<style type="text/css">
-		.colunm{
+		/* .colunm{
 			border: 1px solid black;
-		} 
+		}  */
 
 	</style>
 	
@@ -16,7 +19,7 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="colunm col-sm-5">
+			<div class="colunm col-sm-12 col-md-5">
 				<h2>PlayList <strong>Rockall</strong></h2>
 				<ol>
 					<li data-cancion ="feel" class="card">
@@ -89,7 +92,8 @@
 							<button class="btn btn-primary btn-reproducir">Play</button>
 						</div>
 					</li>
-					<li data-cancion ="back-acdc" class="card">
+					<li data-cancion ="back-acdc" class="card ">
+					
 						<div class="card-body">
 							<div class="d-flex justify-content-between contenedor-informacion">
 								<div>
@@ -108,14 +112,14 @@
  
 				</ol>
 			</div>
-			<div class="colunm col-sm-7 p-5 ocda-exuchando.chsdie4wsdfjiosdfhsd">
+			<div class="colunm col-sm-12 col-md-7 p-5">
 				<h2 class="text-center">Me estas escuchando</h2>	
 				<h4 id="tituloCancion">Nombre de la cancion</h4>
 				<h5 id="tituloArtista">Nombre de el artista</h5>
 				<div class="p-3 text-center" id="contenedorImagen"> <img src="" alt="">  </div>
 				<div class="process">
 					<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">70</div>
+						<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0</div>
 					  </div>
 				</div>
 				<div class="btn-group">
