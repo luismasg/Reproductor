@@ -20,11 +20,10 @@ let songs = []; /* this is a let variable because I will fill it with data later
 
 //this is for netlify
 /* const populateCards = () => {
-
   return fetch("db.json")
     .then(response => response.json())
-    .then(songsData => {
-      songs = songsData;
+    .then(data => {
+      songs = data.songs;
       songs.map((song, index) => CreateCard(song, index));
     });
 }; */
@@ -106,3 +105,7 @@ populateCards(); /*invoke the fetch call after all the other code has finished l
 setInterval(() => {
   actualizarBarra();
 }, 500); /*we update the progress bar every 500 milliseconds*/
+reproductor.onended = () => {
+  HighlightSelectedCard(document.getElementsByClassName("card"), 900);
+  reproductor.currentTime = 0;
+};
