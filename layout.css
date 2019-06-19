@@ -1,0 +1,20 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+}
+
+.container {
+  padding: 20px 10px;
+}
+
+li.card {
+  margin-bottom: 30px;
+}
+ul {
+  padding-left: 0;
+}

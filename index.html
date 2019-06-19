@@ -33,36 +33,22 @@
           </ul>
         </div>
 
-        <div class=" col-sm-12 col-md-7">
-          <div class="card playing ">
+        <div class=" col-sm-12 col-md-6  offset-md-1">
+          <div class="card player  ">
             <img
               src="img/music.jpg"
-              class="img-container img-fluid"
+              class="player-cover-image img-fluid"
               style="max-width: 100%"
             />
+            <div id="myProgress">
+              <div id="myBar"></div>
+            </div>
             <div class="card-body">
               <h5 class="card-title" id="tituloCancion">Track title</h5>
               <p class="card-text" id="tituloArtista">
                 we'll show your artist here when you star to play
               </p>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  aria-valuenow="0"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  0
-                </div>
-              </div>
             </div>
-          </div>
-
-          <div class="btn-group">
-            <button class="btn btn-default"></button>
-            <button id="pausa" class="btn btn-default"></button>
-            <button class="btn btn-default"></button>
           </div>
         </div>
       </div>

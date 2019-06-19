@@ -17,13 +17,15 @@ const populateCards = () => {
     .then(response => response.json())
     .then(data => data.songs.map(song => CreateCard(song,index)));
 }; */
-
+const pause = () => {
+  if (event.target.classList.contains("disabled")) return;
+  reproductor.pause();
+};
 const play = (audio, index) => {
-  console.log(event.target);
-  colorSelectedCard(document.getElementsByClassName("card"), index);
+  HighlightSelectedCard(document.getElementsByClassName("card"), index);
   reproductor.src = `music/${audio}`;
   reproductor.play();
-  document.querySelector(".progress").style.visibility = "visible";
+  // document.querySelector(".progress").style.visibility = "visible";
   setInterval(() => {
     //we update the progress bar every 500 milliseconds
     actualizarBarra();
@@ -44,34 +46,33 @@ const CreateCard = ({ title, artist, image, audio }, index) => {
         <img src="img/${image}" class="img-album" />
       </div>
     </div>
-    <button class="btn btn-primary btn-reproducir" onclick="
+    <button class="btn-reproducir" onclick="
       play('${audio}',${index})
-    ">Play</button>
-    <button class="btn btn-primary btn-detener" onclick="
-      reproductor.pause()">Pause</button>
+    "><i class="fas fa-play"></i></button>
+    <button class=" btn-detener disabled" onclick="
+    pause()"><i class="fas fa-pause"></i></button>
   </div>
 `);
 };
 //actualizar barra de progreso
 const actualizarBarra = () => {
-  var progresoNumero =
+  const progresoNumero =
     Math.round((reproductor.currentTime / reproductor.duration) * 100) + "%"; // guardo porcentaje para futura referencia
-  var progressBar = document.querySelector(".progress-bar");
-  progressBar.style.width = progresoNumero; // Aqui actualizamos el css para bootstrap
-  progressBar.innerHTML = progresoNumero; // aqui actualizamos El texto interior que muestra el porcentaje
+  const progressBar = document.querySelector("#myBar");
+  progressBar.style.width = `${progresoNumero}`; // Aqui actualizamos el css para bootstrap
 };
 function cambiarInfo(index) {
   document.querySelector("#tituloCancion").innerHTML = songs[index].title;
   document.querySelector("#tituloArtista").innerHTML = songs[index].artist;
-  document.querySelector(".img-container").src = `img/${
+  document.querySelector(".player-cover-image").src = `img/${
     songs[index].largeImage
   }`;
 }
-const colorSelectedCard = (nodeCollection, index) => {
+const HighlightSelectedCard = (nodeCollection, index) => {
   for (let i = 0; i < nodeCollection.length; i++) {
     index === i
-      ? nodeCollection[i].classList.add("seleccionada")
-      : nodeCollection[i].classList.remove("seleccionada");
+      ? nodeCollection[i].classList.add("playing")
+      : nodeCollection[i].classList.remove("playing");
   }
 };
 
