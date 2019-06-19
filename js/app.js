@@ -23,7 +23,10 @@ let songs = []; /* this is a let variable because I will fill it with data later
 
   return fetch("db.json")
     .then(response => response.json())
-    .then(data => data.songs.map(song => CreateCard(song, index)));
+    .then(songsData => {
+      songs = songsData;
+      songs.map((song, index) => CreateCard(song, index));
+    });
 }; */
 
 const populateCards = () => {
