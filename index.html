@@ -1,137 +1,73 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-	  <!-- Required meta tags -->
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Musihall</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="style.css" >
-	<style type="text/css">
-		/* .colunm{
-			border: 1px solid black;
-		}  */
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Music Hall</title>
 
-	</style>
-	
-</head>
-<body>
-	<div class="container">
-		<div class="row">
-			<div class="colunm col-sm-12 col-md-5">
-				<h2>PlayList <strong>Rockall</strong></h2>
-				<ol>
-					<li data-cancion ="feel" class="card">
-						<div class="card-body">
-							<div class="d-flex justify-content-between contenedor-informacion">
-								<div>
-									<h4>Feel good Inc</h4>					
-									<h5>Gorillaz</h5>
-								</div>							
-								<div>
-									<img src="img/feel.jpg" class="img-album"/>
-								</div>							
-							</div>
-							<button class="btn btn-primary btn-reproducir">Play</button>
-						</div>
-					</li>
-					<li data-cancion ="tnt" class="card">
-						<div class="card-body">
-							<div class="d-flex justify-content-between contenedor-informacion">
-								<div>
-									<h4>tnt</h4>					
-									<h5>ACDC</h5>
-								</div>							
-								<div>
-									<img src="img/tnt.jpg" class="img-album"/>
-								</div>							
-							</div>
-							<button class="btn btn-primary btn-reproducir">Play</button>
-						</div>
-					</li>
-					<li data-cancion ="dream" class="card">
-						<div class="card-body">
-							<div class="d-flex justify-content-between contenedor-informacion">
-								<div>
-									<h4>Dream on</h4>					
-									<h5>Aerosmith</h5>
-								</div>							
-								<div>
-									<img src="img/dreamon.jpg" class="img-album"/>
-								</div>							
-							</div>
-							<button class="btn btn-primary btn-reproducir">Play</button>
-						</div>
-					</li>
-					<li data-cancion ="numb" class="card">
-						<div class="card-body">
-							<div class="d-flex justify-content-between contenedor-informacion">
-								<div>
-									<h4>Numb</h4>					
-									<h5>Nirvana</h5>
-								</div>							
-								<div>
-									<img src="img/numb.jpg" class="img-album"/>
-								</div>							
-							</div>
-							<button class="btn btn-primary btn-reproducir">Play</button>
-						</div>
-					</li>
-					<li data-cancion ="lithium" class="card">
-						<div class="card-body">
-							<div class="d-flex justify-content-between contenedor-informacion">
-								<div>
-									<h4>Lithium</h4>					
-									<h5>Nirvana</h5>
-								</div>							
-								<div>
-									<img src="img/lithium.jpg" class="img-album"/>
-								</div>							
-							</div>
-							<button class="btn btn-primary btn-reproducir">Play</button>
-						</div>
-					</li>
-					<li data-cancion ="back-acdc" class="card ">
-					
-						<div class="card-body">
-							<div class="d-flex justify-content-between contenedor-informacion">
-								<div>
-									<h4 class="titulo">Black in Black</h4>					
-									<h5>ACDC</h5>
-								</div>							
-								<div>
-									<img src="img/blackinblack.jpg" class="img-album"/>
-								</div>							
-							</div>
-							<button class="btn btn-primary btn-reproducir">Play</button>
-						</div>
-					</li>
-				
-					
- 
-				</ol>
-			</div>
-			<div class="colunm col-sm-12 col-md-7 p-5">
-				<h2 class="text-center">Me estas escuchando</h2>	
-				<h4 id="tituloCancion">Nombre de la cancion</h4>
-				<h5 id="tituloArtista">Nombre de el artista</h5>
-				<div class="p-3 text-center" id="contenedorImagen"> <img src="" alt="">  </div>
-				<div class="process">
-					<div class="progress">
-						<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0</div>
-					  </div>
-				</div>
-				<div class="btn-group">
-					<button class="btn btn-default"></button>
-					<button id= "pausa" class="btn btn-default"></button>
-					<button class="btn btn-default"></button>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<script type="text/javascript" src="js/app.js">
-	</script>
-</body>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://kit.fontawesome.com/24466b86ce.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark t">
+      <a class="navbar-brand" href="#">
+        <i class="fab fa-napster"></i>
+        Music Hall
+      </a>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class=" col-sm-12 col-md-5">
+          <ul class="songs-list" id="style-7">
+            <!--place cards here -->
+          </ul>
+        </div>
+
+        <div class=" col-sm-12 col-md-7">
+          <div class="card playing ">
+            <img
+              src="img/music.jpg"
+              class="img-container img-fluid"
+              style="max-width: 100%"
+            />
+            <div class="card-body">
+              <h5 class="card-title" id="tituloCancion">Track title</h5>
+              <p class="card-text" id="tituloArtista">
+                we'll show your artist here when you star to play
+              </p>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="0"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  0
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button class="btn btn-default"></button>
+            <button id="pausa" class="btn btn-default"></button>
+            <button class="btn btn-default"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>Bedu</footer>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
 </html>
