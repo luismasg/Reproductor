@@ -1,96 +1,91 @@
-//aqui recupero una lista de botonoes
-var botones = document.getElementsByClassName("btn-reproducir");
+const reproductor = new Audio();
+const songsLists = document.querySelector(".songs-list");
+let songs = [];
 
-//aqui recorri cada elemento de la lista de botones
-for (var i = 0; i < botones.length; i++) {
-  botones[i].addEventListener("click", function(e) {
-    play(e);
-  });
-  //botones[i].onclick=function (){alert("cosa")}
-}
+const populateCards = () => {
+  return fetch("http://localhost:3000/songs")
+    .then(response => response.json())
+    .then(songsData => {
+      songs = songsData;
+      songs.map((song, index) => CreateCard(song, index));
+    });
+};
 
-//defino la funcion para disparar la accion cuando un click
-function play(e) {
-  var cards = document.getElementsByClassName("card-body");
+//this is for netlify
+/* const populateCards = () => {
+  return fetch("db.json")
+    .then(response => response.json())
+    .then(data => data.songs.map(song => CreateCard(song,index)));
+}; */
 
-
-  //quito el color a todas las tarjetas
-  for (var iterador = 0; iterador < cards.length; iterador++) {
-    cards[iterador].classList.remove("seleccionada");
-  } // hago trampa  , se le quito la clase sele a todas
-
-  e.target.parentElement.classList.add("seleccionada") // pinto la tarjeta que acabo de tocar
-
-  var cancion = e.target.parentElement.parentElement.dataset.cancion; // extraigo nombre cancion
-  var reproductor = new Audio("music/" + cancion + ".mp3");
+const play = (audio, index) => {
+  console.log(event.target);
+  colorSelectedCard(document.getElementsByClassName("card"), index);
+  reproductor.src = `music/${audio}`;
   reproductor.play();
-  //reproductor.volume = 0.08;  // activa estas dos lineas para probar
-  //reproductor.playbackRate = 5;
-
-  setInterval(function() {
-    //cada 500 milisegundos actualizamos la barra de progresso
-    actualizarBarra(reproductor);
+  document.querySelector(".progress").style.visibility = "visible";
+  setInterval(() => {
+    //we update the progress bar every 500 milliseconds
+    actualizarBarra();
   }, 500);
+  cambiarInfo(index);
 
-  //aqui cambiamos el texto , pasamos el evento (con el boton para acutalizar los campos)
-  cambiarInfo(e.target.parentElement);
-}
-
-function actualizarBarra(reproductor) {
+  disablePauseButtons(document.getElementsByClassName("btn-detener"), index);
+};
+const CreateCard = ({ title, artist, image, audio }, index) => {
+  attachToDom(`  
+  <div class="card-body">
+    <div class="d-flex justify-content-between contenedor-informacion">
+      <div>
+        <h4>${title}</h4>
+        <h5>${artist}</h5>
+      </div>
+      <div>
+        <img src="img/${image}" class="img-album" />
+      </div>
+    </div>
+    <button class="btn btn-primary btn-reproducir" onclick="
+      play('${audio}',${index})
+    ">Play</button>
+    <button class="btn btn-primary btn-detener" onclick="
+      reproductor.pause()">Pause</button>
+  </div>
+`);
+};
+//actualizar barra de progreso
+const actualizarBarra = () => {
   var progresoNumero =
-    Math.round((reproductor.currentTime / reproductor.duration) * 100) + "%"; // guardo porcentaje para gutura referencia
-  var progressBar = document.getElementsByClassName("progress-bar")[0]; 
+    Math.round((reproductor.currentTime / reproductor.duration) * 100) + "%"; // guardo porcentaje para futura referencia
+  var progressBar = document.querySelector(".progress-bar");
   progressBar.style.width = progresoNumero; // Aqui actualizamos el css para bootstrap
   progressBar.innerHTML = progresoNumero; // aqui actualizamos El texto interior que muestra el porcentaje
+};
+function cambiarInfo(index) {
+  document.querySelector("#tituloCancion").innerHTML = songs[index].title;
+  document.querySelector("#tituloArtista").innerHTML = songs[index].artist;
+  document.querySelector(".img-container").src = `img/${
+    songs[index].largeImage
+  }`;
 }
-
-/*
-var titulo = e.target.hermano[0].children[0].children[0].innerText => "Blacnk in back"
-				//	var titulo = e.target.(papa.hijos[0]).getelementbyClassName(titulo)[0].innerText 
-					var autor =e.target.hermano[0].children[0].chyildren[1].innerText= > ACDC   
-					var imagen = e.target.hermano[0].children[1].children[0].src;  =>>> la foto   
-
-  
-					//var contender  =  getEmeltltbnyID(cosa-ecushandkoakdfhdkisd)
-					var titulo= document.getElementById("tituloCancion");
-					titulo.innerText= titulo ;
-
-					document.getElementById("tituloArtista").innerText=autor; 
-					document.getelemevebhibyId    ("contenedorImagen").children[0].src=imagen
-
-
-
-
-*/
-
-function cancionseleccionada(cancion, elementoCancion) {
-  if (ultimaCancion != "") {
-    var selector = 'li [data-cancion="' + ultimaCancion + '"]';
-    var elementoAnterior = contenedorPlaylist.querySelector(selector);
-    elementoAnterior.classList.remove("selecionada");
+const colorSelectedCard = (nodeCollection, index) => {
+  for (let i = 0; i < nodeCollection.length; i++) {
+    index === i
+      ? nodeCollection[i].classList.add("seleccionada")
+      : nodeCollection[i].classList.remove("seleccionada");
   }
-}
-function cambiarInfo(elemento) {
-  var contenedor = elemento.getElementsByClassName("contenedor-informacion")[0];
-  var elementoCancion = contenedor.children[0].children[0];
-  var elementoNArtista = contenedor.children[0].children[1];
-  var nombreCancion = elementoCancion.innerHTML;
-  var nombreArtista = elementoNArtista.innerHTML;
-  var rutaImagen = elementoImagen.src;
+};
 
-  document.getElementsById("tituloCancion").innerHTML = nombreCancion;
-  document.getElementsById("tituloartista").innerHTML = nombreArtista;
-
-  elementoImagen = document.createElement("img");
-  elementoImagen.classList.add("imagen-actual");
-  elementoImagen.src = rutaImagen;
-
-  var contenedorImagen = document.getElementsById("contenedorImagen");
-  if (contenedorImagen.children.length > 0) {
-    contenedorImagen.children[0].remove();
+const disablePauseButtons = (nodeCollection, index) => {
+  for (let i = 0; i < nodeCollection.length; i++) {
+    index === i
+      ? nodeCollection[i].classList.remove("disabled")
+      : nodeCollection[i].classList.add("disabled");
   }
-  contenedorImagen.appchild(elementoImagen);
-
-  console.log(nombreCancion);
-  console.log(nombreArtista);
-}
+};
+const attachToDom = html => {
+  const card = document.createElement("li");
+  card.classList.add("card");
+  card.innerHTML = html;
+  songsLists.appendChild(card);
+};
+populateCards();

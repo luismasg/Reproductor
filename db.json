@@ -1,0 +1,46 @@
+{
+  "songs": [
+    {
+      "title": "dream on",
+      "artist": "aerosmith",
+      "image": "dreamon.jpg",
+      "largeImage": "aerosmith.jpg",
+      "audio": "dream.mp3"
+    },
+    {
+      "title": "numb",
+      "artist": "Linkin Park",
+      "image": "numb.jpg",
+      "audio": "numb.mp3",
+      "largeImage": "linkinpark.jpg"
+    },
+    {
+      "title": "lithium",
+      "artist": "nirvana",
+      "image": "lithium.jpg",
+      "audio": "lithium.mp3",
+      "largeImage": "nirvana.jpg"
+    },
+    {
+      "title": "tnt",
+      "artist": "acdc",
+      "image": "tnt.jpg",
+      "audio": "tnt.mp3",
+      "largeImage": "acdc.jpg"
+    },
+    {
+      "title": "back in black",
+      "artist": "acdc",
+      "image": "backinblack.jpg",
+      "audio": "back-acdc.mp3",
+      "largeImage": "acdcblack.jpg"
+    },
+    {
+      "title": "feel",
+      "artist": "gorrilaz",
+      "image": "feel.jpg",
+      "audio": "feel.mp3",
+      "largeImage": "gorillaz.jpg"
+    }
+  ]
+}

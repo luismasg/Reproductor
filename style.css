@@ -1,11 +1,67 @@
-.img-album{
-	width: 150px;
-	height: 150px;
+.img-album {
+  width: 150px;
+  height: 150px;
 }
-.card{
-	margin-bottom: 10px;
-	
+.card {
+  margin-bottom: 10px;
 }
 
+.seleccionada {
+  background-color: lightgray;
+}
 
-.seleccionada{background-color: aqua;}
+.img-container {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#tituloArtista {
+  text-transform: capitalize;
+}
+#tituloCancion {
+  text-transform: capitalize;
+}
+.progress {
+  visibility: hidden;
+}
+
+.progress-bar {
+  background-color: #1aae51;
+}
+ul {
+  padding-left: 0;
+}
+.playlist-title {
+  text-align: center;
+}
+body {
+  background: #0c121c;
+}
+.container {
+  padding-top: 20px;
+}
+button.play {
+  border: none;
+  background: none;
+}
+.card {
+  background-color: #1a222c;
+  color: white;
+  border-radius: 15px;
+}
+
+.seleccionada {
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 174, 81, 0.35) 0%,
+    rgba(10, 64, 30, 0) 63%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  border: 3px solid #1aae51;
+  border-bottom: none;
+}
+
+nav {
+  background-color: #19212c;
+  border-bottom: 1px solid #2f3b42;
+}
